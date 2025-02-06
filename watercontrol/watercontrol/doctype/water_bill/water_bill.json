@@ -1,0 +1,157 @@
+{
+ "actions": [],
+ "autoname": "format:{bill_year}-{land}",
+ "creation": "2025-02-05 00:18:29.223564",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "bill_information_column",
+  "bill_year",
+  "land",
+  "block",
+  "house",
+  "column_break_ioxw",
+  "subscriber_information",
+  "subscriber",
+  "birthdate",
+  "age",
+  "amended_from",
+  "section_break_mr",
+  "monthly_receipts",
+  "section_break_ogue",
+  "total"
+ ],
+ "fields": [
+  {
+   "fieldname": "land",
+   "fieldtype": "Link",
+   "label": "Land",
+   "link_filters": "[[\"Land\",\"docstatus\",\"=\",\"1\"]]",
+   "options": "Land",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "land.full_name",
+   "fieldname": "subscriber",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Subscriber",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "land.block",
+   "fieldname": "block",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Block",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "land.house",
+   "fieldname": "house",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "House",
+   "read_only": 1
+  },
+  {
+   "fieldname": "bill_year",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Fee",
+   "link_filters": "[[\"Fee\",\"docstatus\",\"=\",\"1\"],[\"Fee\",\"disabled\",\"=\",0]]",
+   "options": "Fee",
+   "reqd": 1
+  },
+  {
+   "fieldname": "bill_information_column",
+   "fieldtype": "Heading",
+   "label": "Bill Information",
+   "search_index": 1
+  },
+  {
+   "depends_on": "eval:doc.subscriber;",
+   "fieldname": "age",
+   "fieldtype": "Int",
+   "label": "Age",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "land.birthdate",
+   "fieldname": "birthdate",
+   "fieldtype": "Date",
+   "label": "Birthdate",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_ioxw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Water Bill",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "depends_on": "eval:doc.subscriber;",
+   "fieldname": "subscriber_information",
+   "fieldtype": "Heading",
+   "label": "Subscriber Information"
+  },
+  {
+   "fieldname": "section_break_ogue",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total",
+   "fieldtype": "Currency",
+   "label": "Total",
+   "read_only": 1
+  },
+  {
+   "fieldname": "monthly_receipts",
+   "fieldtype": "Table",
+   "label": "Monthly Receipts",
+   "options": "Bill Payment Scheduling",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_mr",
+   "fieldtype": "Section Break",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-02-05 18:08:16.950008",
+ "modified_by": "Administrator",
+ "module": "Watercontrol",
+ "name": "Water Bill",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "block,house",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "subscriber"
+}

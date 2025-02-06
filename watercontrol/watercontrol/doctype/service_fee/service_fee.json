@@ -1,0 +1,51 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-02-05 10:54:16.085456",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "service_name",
+  "fee",
+  "discount_applies"
+ ],
+ "fields": [
+  {
+   "fieldname": "service_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Service Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "fee",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Fee",
+   "reqd": 1
+  },
+  {
+   "columns": 2,
+   "default": "0",
+   "fieldname": "discount_applies",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Discount Applies",
+   "width": "2"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-02-05 16:33:24.065975",
+ "modified_by": "Administrator",
+ "module": "Watercontrol",
+ "name": "Service Fee",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

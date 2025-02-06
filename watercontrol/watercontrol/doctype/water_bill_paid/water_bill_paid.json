@@ -1,0 +1,65 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-02-05 18:14:23.578995",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "month",
+  "service_amount",
+  "discount",
+  "total",
+  "paid"
+ ],
+ "fields": [
+  {
+   "fieldname": "month",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Month",
+   "read_only": 1
+  },
+  {
+   "fieldname": "service_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Service Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "discount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Discount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "paid",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "To Pay",
+   "print_hide": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-02-05 19:18:07.701053",
+ "modified_by": "Administrator",
+ "module": "Watercontrol",
+ "name": "Water Bill Paid",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

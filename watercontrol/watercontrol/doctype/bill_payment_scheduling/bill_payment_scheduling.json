@@ -1,0 +1,70 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-02-05 13:31:28.360790",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "month",
+  "service_amount",
+  "discount",
+  "total",
+  "payment_date",
+  "water_bill_payment"
+ ],
+ "fields": [
+  {
+   "fieldname": "month",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Month",
+   "reqd": 1
+  },
+  {
+   "fieldname": "service_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Service Amount",
+   "reqd": 1
+  },
+  {
+   "fieldname": "total",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total",
+   "reqd": 1
+  },
+  {
+   "fieldname": "discount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Discount",
+   "reqd": 1
+  },
+  {
+   "fieldname": "payment_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Payment Date"
+  },
+  {
+   "fieldname": "water_bill_payment",
+   "fieldtype": "Link",
+   "label": "Water Bill Payment",
+   "options": "Water Bill Payment"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-02-05 19:30:00.418125",
+ "modified_by": "Administrator",
+ "module": "Watercontrol",
+ "name": "Bill Payment Scheduling",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

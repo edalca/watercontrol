@@ -1,0 +1,141 @@
+{
+ "actions": [],
+ "autoname": "format:WBP-{YY}-{####}",
+ "creation": "2025-02-05 17:48:59.118372",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_0wbx",
+  "date",
+  "water_bill",
+  "column_break_tguv",
+  "subscriber",
+  "block",
+  "house",
+  "section_break_daap",
+  "receipts_pay",
+  "section_break_riom",
+  "column_break_rwqw",
+  "column_break_iumx",
+  "total_to_pay",
+  "section_break_dkeq",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_0wbx",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Water Bill Payment",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_dkeq",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "water_bill",
+   "fieldtype": "Link",
+   "label": "Water Bill",
+   "link_filters": "[[\"Water Bill\",\"docstatus\",\"=\",\"1\"]]",
+   "options": "Water Bill",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_tguv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "water_bill.subscriber",
+   "fieldname": "subscriber",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Subscriber",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "water_bill.block",
+   "fieldname": "block",
+   "fieldtype": "Data",
+   "label": "Block",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "water_bill.house",
+   "fieldname": "house",
+   "fieldtype": "Data",
+   "label": "House",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_daap",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "receipts_pay",
+   "fieldtype": "Table",
+   "label": "Monthly Receipts",
+   "options": "Water Bill Paid"
+  },
+  {
+   "fieldname": "section_break_riom",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total_to_pay",
+   "fieldtype": "Currency",
+   "label": "Total to pay",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_rwqw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_iumx",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-02-05 19:08:34.604534",
+ "modified_by": "Administrator",
+ "module": "Watercontrol",
+ "name": "Water Bill Payment",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "subscriber"
+}

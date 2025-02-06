@@ -1,0 +1,105 @@
+{
+ "actions": [],
+ "autoname": "field:identification",
+ "creation": "2025-02-04 21:31:52.605274",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "identification",
+  "first_name",
+  "middle_name",
+  "last_name",
+  "full_name",
+  "column_break_uuqb",
+  "birthdate",
+  "phone",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "identification",
+   "fieldtype": "Data",
+   "label": "DNI",
+   "length": 13,
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "first_name",
+   "fieldtype": "Data",
+   "label": "First Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "middle_name",
+   "fieldtype": "Data",
+   "label": "Middle Name"
+  },
+  {
+   "fieldname": "last_name",
+   "fieldtype": "Data",
+   "label": "Last Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_uuqb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "birthdate",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Birthdate"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Phone"
+  },
+  {
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Full Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Subscriber",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-02-05 17:56:30.872654",
+ "modified_by": "Administrator",
+ "module": "Watercontrol",
+ "name": "Subscriber",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "full_name"
+}

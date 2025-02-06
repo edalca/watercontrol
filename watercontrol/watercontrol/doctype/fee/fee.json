@@ -1,0 +1,123 @@
+{
+ "actions": [],
+ "autoname": "format:BILL-{bill_year}",
+ "creation": "2025-02-05 11:00:27.197828",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "fee_name",
+  "column_break_mewe",
+  "bill_year",
+  "disabled",
+  "section_break_fdox",
+  "service_fee",
+  "section_break_agzq",
+  "column_break_gwfa",
+  "amended_from",
+  "column_break_itfw",
+  "total",
+  "total_discount"
+ ],
+ "fields": [
+  {
+   "fieldname": "bill_year",
+   "fieldtype": "Link",
+   "label": "Fee Year",
+   "link_filters": "[[\"Fiscal Year\",\"disabled\",\"=\",0]]",
+   "options": "Fiscal Year",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Fee",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "service_fee",
+   "fieldtype": "Table",
+   "label": "Service Fee",
+   "options": "Service Fee",
+   "reqd": 1
+  },
+  {
+   "fieldname": "total",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_fdox",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_agzq",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_gwfa",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_itfw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "fee_name",
+   "fieldtype": "Data",
+   "label": "Fee Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_mewe",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "disabled",
+   "fieldtype": "Check",
+   "label": "Disabled"
+  },
+  {
+   "fieldname": "total_discount",
+   "fieldtype": "Currency",
+   "label": "Total with Discount",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-02-05 16:45:32.761036",
+ "modified_by": "Administrator",
+ "module": "Watercontrol",
+ "name": "Fee",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "fee_name"
+}
