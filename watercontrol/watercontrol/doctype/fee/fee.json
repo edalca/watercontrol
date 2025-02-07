@@ -1,10 +1,11 @@
 {
  "actions": [],
- "autoname": "format:BILL-{bill_year}",
+ "autoname": "format:BILL-{bill_year}-{##}",
  "creation": "2025-02-05 11:00:27.197828",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "company",
   "fee_name",
   "column_break_mewe",
   "bill_year",
@@ -90,12 +91,19 @@
    "fieldtype": "Currency",
    "label": "Total with Discount",
    "read_only": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-02-05 16:45:32.761036",
+ "modified": "2025-02-06 17:28:31.985279",
  "modified_by": "Administrator",
  "module": "Watercontrol",
  "name": "Fee",

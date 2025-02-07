@@ -11,6 +11,14 @@ frappe.ui.form.on("Water Bill Payment", {
     if (frm.is_new()) {
       set_current_date(frm);
     }
+    frm.set_query('water_bill', function() {
+      return {
+          filters: {
+              'docstatus': 1,
+              'company':frm.doc.company
+          }
+      };
+    });
   },
 });
 

@@ -11,6 +11,7 @@
   "last_name",
   "full_name",
   "column_break_uuqb",
+  "company",
   "birthdate",
   "phone",
   "amended_from"
@@ -73,12 +74,19 @@
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-02-05 17:56:30.872654",
+ "modified": "2025-02-06 16:50:06.484860",
  "modified_by": "Administrator",
  "module": "Watercontrol",
  "name": "Subscriber",
@@ -86,6 +94,8 @@
  "owner": "Administrator",
  "permissions": [
   {
+   "amend": 1,
+   "cancel": 1,
    "create": 1,
    "delete": 1,
    "email": 1,
@@ -95,6 +105,7 @@
    "report": 1,
    "role": "System Manager",
    "share": 1,
+   "submit": 1,
    "write": 1
   }
  ],

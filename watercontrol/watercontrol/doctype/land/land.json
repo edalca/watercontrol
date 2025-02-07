@@ -6,10 +6,13 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "subscriber_information",
+  "company",
   "subscriber",
   "full_name",
   "birthdate",
   "column_break_wbkm",
+  "land_information",
   "block",
   "house",
   "amended_from"
@@ -20,7 +23,6 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Subscriber",
-   "link_filters": "[[\"Subscriber\",\"docstatus\",\"=\",\"1\"]]",
    "options": "Subscriber",
    "reqd": 1
   },
@@ -65,12 +67,29 @@
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
+  },
+  {
+   "fieldname": "subscriber_information",
+   "fieldtype": "Heading",
+   "label": "Subscriber Information"
+  },
+  {
+   "fieldname": "land_information",
+   "fieldtype": "Heading",
+   "label": "Land Information"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-02-05 17:57:41.241978",
+ "modified": "2025-02-06 17:26:29.637536",
  "modified_by": "Administrator",
  "module": "Watercontrol",
  "name": "Land",
@@ -78,6 +97,8 @@
  "owner": "Administrator",
  "permissions": [
   {
+   "amend": 1,
+   "cancel": 1,
    "create": 1,
    "delete": 1,
    "email": 1,
@@ -87,6 +108,7 @@
    "report": 1,
    "role": "System Manager",
    "share": 1,
+   "submit": 1,
    "write": 1
   }
  ],

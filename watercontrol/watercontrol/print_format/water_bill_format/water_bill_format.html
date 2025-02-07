@@ -1,0 +1,79 @@
+{%- macro render_table(doc,row) -%} {% set months = ["January", "February",
+"March", "April", "May", "June", "July", "August", "September", "October",
+"November", "December"] %} {% set company = frappe.get_doc("Company",
+doc.company) %}
+<div class="container-fluid" style="border: 1px solid black;margin:8px 0">
+  <div class="text-center">
+    <h4>{{company.name}}</h4>
+  </div>
+  <div class="row">
+    <div class="col-xs-2"><b>{{_("Name")}}:</b></div>
+    <div class="col-xs-10" style="border-bottom: 1xp solid black">
+      {{_(doc.subscriber)}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-2"><b>{{ _("Block")}}:</b></div>
+    <div class="col-xs-2">{{ doc.block}}</div>
+    <div class="col-xs-2"><b>{{_("House")}}:</b></div>
+    <div class="col-xs-2">{{ doc.house}}</div>
+    <div class="col-xs-2"><b>{{_("Month")}}:</b></div>
+    <div class="col-xs-2">{{ _(months[row.month - 1]) }}</div>
+  </div>
+  {% set fee_doc = frappe.get_doc("Fee", doc.fee) %}
+  <table class="table-print">
+    <thead>
+      <tr>
+        <th>{{ _("Service Name")}}</th>
+        <th>{{ _("Fee")}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for service in fee_doc.service_fee %}
+      <tr>
+        <td>{{ _(service.service_name)}}</td>
+        <td>{{ service.fee }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+    <tfooter>
+      <tr>
+        <td>{{_("Total")}}</td>
+        <td>{{ fee_doc.total}}</td>
+      </tr>
+    </tfooter>
+  </table>
+  <div class="row"></div>
+  <div class="row text-center">
+    <div class="col-xs-12"><b>{{ _("Signature")}}</b></div>
+  </div>
+</div>
+{%- endmacro -%} {% for row in doc.monthly_receipts %}
+<div>
+  <div class="row">
+    <div class="col-xs-6 border">{{render_table(doc,row)}}</div>
+    <div class="col-xs-6">{{render_table(doc,row)}}</div>
+  </div>
+</div>
+{% if loop.index % 4 == 0 and not loop.last %}
+  <div class="page-break"></div>
+{% endif %}
+{% endfor %}
+<style>
+  .table-print {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  .table-print th,
+  .table-print tr,
+  .table-print td {
+    border: 1px solid black;
+    padding: 3px !important;
+    text-align: left;
+  }
+  .table-print th {
+    background-color: #f2f2f2;
+    color: black;
+  }
+</style>

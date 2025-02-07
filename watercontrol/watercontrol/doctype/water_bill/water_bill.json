@@ -1,12 +1,13 @@
 {
  "actions": [],
- "autoname": "format:{bill_year}-{land}",
+ "autoname": "format:{fee}-{land}",
  "creation": "2025-02-05 00:18:29.223564",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "bill_information_column",
-  "bill_year",
+  "company",
+  "fee",
   "land",
   "block",
   "house",
@@ -26,7 +27,6 @@
    "fieldname": "land",
    "fieldtype": "Link",
    "label": "Land",
-   "link_filters": "[[\"Land\",\"docstatus\",\"=\",\"1\"]]",
    "options": "Land",
    "reqd": 1
   },
@@ -53,15 +53,6 @@
    "in_list_view": 1,
    "label": "House",
    "read_only": 1
-  },
-  {
-   "fieldname": "bill_year",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Fee",
-   "link_filters": "[[\"Fee\",\"docstatus\",\"=\",\"1\"],[\"Fee\",\"disabled\",\"=\",0]]",
-   "options": "Fee",
-   "reqd": 1
   },
   {
    "fieldname": "bill_information_column",
@@ -124,12 +115,27 @@
    "fieldname": "section_break_mr",
    "fieldtype": "Section Break",
    "read_only": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "fee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Fee",
+   "options": "Fee",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-02-05 18:08:16.950008",
+ "modified": "2025-02-06 17:39:29.862401",
  "modified_by": "Administrator",
  "module": "Watercontrol",
  "name": "Water Bill",
@@ -137,6 +143,7 @@
  "owner": "Administrator",
  "permissions": [
   {
+   "cancel": 1,
    "create": 1,
    "delete": 1,
    "email": 1,
@@ -145,7 +152,9 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "select": 1,
    "share": 1,
+   "submit": 1,
    "write": 1
   }
  ],

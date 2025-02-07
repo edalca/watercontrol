@@ -6,6 +6,7 @@
  "engine": "InnoDB",
  "field_order": [
   "section_break_0wbx",
+  "company",
   "date",
   "water_bill",
   "column_break_tguv",
@@ -51,7 +52,6 @@
    "fieldname": "water_bill",
    "fieldtype": "Link",
    "label": "Water Bill",
-   "link_filters": "[[\"Water Bill\",\"docstatus\",\"=\",\"1\"]]",
    "options": "Water Bill",
    "reqd": 1
   },
@@ -108,12 +108,19 @@
   {
    "fieldname": "column_break_iumx",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-02-05 19:08:34.604534",
+ "modified": "2025-02-06 17:35:01.930653",
  "modified_by": "Administrator",
  "module": "Watercontrol",
  "name": "Water Bill Payment",
@@ -121,6 +128,8 @@
  "owner": "Administrator",
  "permissions": [
   {
+   "amend": 1,
+   "cancel": 1,
    "create": 1,
    "delete": 1,
    "email": 1,

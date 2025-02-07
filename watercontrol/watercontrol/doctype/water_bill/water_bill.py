@@ -11,7 +11,7 @@ class WaterBill(Document):
         
     def monthly_receipts_insert(self):
         self.set('monthly_receipts', [])
-        fee = frappe.get_doc('Fee', self.bill_year)  
+        fee = frappe.get_doc('Fee', self.fee)  
         for month in range(1, 13):
             item = self.append('monthly_receipts', {})
             item.month = month  # Asignar el valor de la columna 'month'

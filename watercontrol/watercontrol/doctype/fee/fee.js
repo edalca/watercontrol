@@ -3,6 +3,13 @@
 frappe.ui.form.on("Fee", {
   refresh(frm){
     calculate_totals(frm);
+    frm.fields_dict['service_fee'].grid.get_field('service_name').get_query = function(doc, cdt, cdn) {
+      return {
+          filters: {
+              'company': frm.doc.company
+          }
+      };
+  };
   },
   before_save(frm) {
     calculate_totals(frm);

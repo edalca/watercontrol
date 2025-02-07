@@ -2,7 +2,24 @@
 // For license information, please see license.txt
 
 frappe.ui.form.on("Water Bill", {
-
+  refresh(frm){
+    frm.set_query('fee', function() {
+      return {
+          filters: {
+              'docstatus': 1,
+              'company':frm.doc.company
+          }
+      };
+    });
+    frm.set_query('land', function() {
+      return {
+          filters: {
+              'docstatus': 1,
+              'company':frm.doc.company
+          }
+      };
+    });
+  },
   birthdate(frm) {
     calculate_age(frm);
   },
