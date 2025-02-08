@@ -1,6 +1,6 @@
-{%- macro render_table(doc,row) -%} {% set months = ["January", "February",
-"March", "April", "May", "June", "July", "August", "September", "October",
-"November", "December"] %} {% set company = frappe.get_doc("Company",
+{%- macro render_table(doc,row) -%} {% set months = ["Enero", "Febrero",
+"Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre",
+"Noviembre", "Diciembre"] %} {% set company = frappe.get_doc("Company",
 doc.company) %}
 <div class="container-fluid" style="border: 1px solid black;margin:8px 0">
   <div class="text-center">
@@ -13,12 +13,9 @@ doc.company) %}
     </div>
   </div>
   <div class="row">
-    <div class="col-xs-2"><b>{{ _("Block")}}:</b></div>
-    <div class="col-xs-2">{{ doc.block}}</div>
-    <div class="col-xs-2"><b>{{_("House")}}:</b></div>
-    <div class="col-xs-2">{{ doc.house}}</div>
-    <div class="col-xs-2"><b>{{_("Month")}}:</b></div>
-    <div class="col-xs-2">{{ _(months[row.month - 1]) }}</div>
+    <div class="col-xs-3"><b>{{ _("Block")}}:</b>{{ doc.block}}</div>
+    <div class="col-xs-3"><b>{{_("House")}}:</b> {{ doc.house}}</div>
+    <div class="col-xs-6"><b>{{_("Month")}}:</b> {{ months[row.month - 1] }}</div>
   </div>
   {% set fee_doc = frappe.get_doc("Fee", doc.fee) %}
   <table class="table-print">
@@ -43,19 +40,20 @@ doc.company) %}
       </tr>
     </tfooter>
   </table>
-  <div class="row"></div>
-  <div class="row text-center">
-    <div class="col-xs-12"><b>{{ _("Signature")}}</b></div>
+  <div class="row" style="padding:10px 0"></div>
+  <div class="row">
+    <div class="col-xs-4"><b>{{ _("Signature")}}:</b></div>
+    <div class="col-xs-8"></div>
   </div>
 </div>
 {%- endmacro -%} {% for row in doc.monthly_receipts %}
 <div>
-  <div class="row">
+  <div class="row" style="padding:15px 0;border-bottom: 1px solid black;">
     <div class="col-xs-6 border">{{render_table(doc,row)}}</div>
     <div class="col-xs-6">{{render_table(doc,row)}}</div>
   </div>
 </div>
-{% if loop.index % 4 == 0 and not loop.last %}
+{% if loop.index % 3 == 0 and not loop.last %}
   <div class="page-break"></div>
 {% endif %}
 {% endfor %}
