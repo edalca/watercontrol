@@ -17,8 +17,7 @@
    "in_list_view": 1,
    "label": "Service Name",
    "options": "Service",
-   "reqd": 1,
-   "unique": 1
+   "reqd": 1
   },
   {
    "fieldname": "fee",
@@ -40,7 +39,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-02-05 20:54:06.268331",
+ "modified": "2025-02-08 13:58:15.323644",
  "modified_by": "Administrator",
  "module": "Watercontrol",
  "name": "Service Fee",

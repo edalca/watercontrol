@@ -37,5 +37,5 @@ function calculate_totals(frm) {
   });
 
   frm.set_value("total", total); // Actualizar el campo total
-  frm.set_value("total_discount", total_discount); // Actualizar el campo total_discount
+  frm.set_value("total_discount", Math.ceil(total_discount)); // Actualizar el campo total_discount
 }
