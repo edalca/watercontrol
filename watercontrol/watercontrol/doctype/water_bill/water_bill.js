@@ -38,5 +38,7 @@ function calculate_age(frm) {
       age--;
     }
     frm.set_value("age", age);
+  }else{
+    frm.set_value("age","");
   }
 }

@@ -9,6 +9,7 @@
   "first_name",
   "middle_name",
   "last_name",
+  "entity",
   "full_name",
   "column_break_uuqb",
   "company",
@@ -28,8 +29,7 @@
   {
    "fieldname": "first_name",
    "fieldtype": "Data",
-   "label": "First Name",
-   "reqd": 1
+   "label": "First Name"
   },
   {
    "fieldname": "middle_name",
@@ -39,8 +39,7 @@
   {
    "fieldname": "last_name",
    "fieldtype": "Data",
-   "label": "Last Name",
-   "reqd": 1
+   "label": "Last Name"
   },
   {
    "fieldname": "column_break_uuqb",
@@ -61,9 +60,7 @@
   {
    "fieldname": "full_name",
    "fieldtype": "Data",
-   "hidden": 1,
-   "label": "Full Name",
-   "read_only": 1
+   "label": "Full Name"
   },
   {
    "fieldname": "amended_from",
@@ -81,12 +78,18 @@
    "label": "Company",
    "options": "Company",
    "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "entity",
+   "fieldtype": "Check",
+   "label": "Entity"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-02-06 16:50:06.484860",
+ "modified": "2025-02-11 11:14:34.096422",
  "modified_by": "Administrator",
  "module": "Watercontrol",
  "name": "Subscriber",

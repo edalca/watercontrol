@@ -71,6 +71,8 @@
    "fetch_from": "water_bill.block",
    "fieldname": "block",
    "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Block",
    "read_only": 1
   },
@@ -78,6 +80,8 @@
    "fetch_from": "water_bill.house",
    "fieldname": "house",
    "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "House",
    "read_only": 1
   },
@@ -98,6 +102,7 @@
   {
    "fieldname": "total_to_pay",
    "fieldtype": "Currency",
+   "in_list_view": 1,
    "label": "Total to pay",
    "read_only": 1
   },
@@ -120,7 +125,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-02-06 17:35:01.930653",
+ "modified": "2025-02-08 18:29:30.458503",
  "modified_by": "Administrator",
  "module": "Watercontrol",
  "name": "Water Bill Payment",

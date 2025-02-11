@@ -9,14 +9,16 @@
   "company",
   "fee",
   "land",
-  "block",
-  "house",
   "column_break_ioxw",
   "subscriber_information",
   "subscriber",
   "birthdate",
   "age",
   "amended_from",
+  "section_break_tpqm",
+  "block",
+  "column_break_gbhu",
+  "house",
   "section_break_mr",
   "monthly_receipts",
   "section_break_ogue",
@@ -130,12 +132,20 @@
    "label": "Fee",
    "options": "Fee",
    "reqd": 1
+  },
+  {
+   "fieldname": "section_break_tpqm",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_gbhu",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-02-06 17:39:29.862401",
+ "modified": "2025-02-11 11:36:40.086187",
  "modified_by": "Administrator",
  "module": "Watercontrol",
  "name": "Water Bill",

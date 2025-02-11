@@ -11,6 +11,7 @@ class Subscriber(Document):
 		self.set_full_name()
 
 	def set_full_name(self):
-		self.full_name = " ".join(
-			filter(lambda x: x, [self.first_name, self.middle_name, self.last_name])
-		)
+		if self.entity==0:	
+			self.full_name = " ".join(
+				filter(lambda x: x, [self.first_name, self.middle_name, self.last_name])
+			)

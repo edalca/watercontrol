@@ -40,6 +40,10 @@ Fee Year,Año Tarifa,
 Discount Applies,Aplica Descuento,
 Total with Discount,Total con Descuento,
 Payment Date,Fecha de Pago,
-Water Bill Payment,Pago de Factura de Agua,
+Water Bill Payment,Pago de Recibo de Agua,
 Total to pay,Total a pagar,
-Land Information,Infomacion del Lote
+Land Information,Infomacion del Lote,
+Water Bill Format,Formato Recibo de Agua,
+To Pay,Pagar,
+Water Bill Paid,Pagos de Recibo de Agua,
+Final Payment Date,Fecha Limite de Pago

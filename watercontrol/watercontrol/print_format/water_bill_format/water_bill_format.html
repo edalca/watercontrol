@@ -2,22 +2,36 @@
 "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre",
 "Noviembre", "Diciembre"] %} {% set company = frappe.get_doc("Company",
 doc.company) %}
+{% set fee_doc = frappe.get_doc("Fee", doc.fee) %}
+{% set land_doc= frappe.get_doc("Land",doc.land)%}
+{% set subscriber_doc= frappe.get_doc("Subscriber",land_doc.subscriber) %}
 <div class="container-fluid" style="border: 1px solid black;margin:8px 0">
   <div class="text-center">
     <h4>{{company.name}}</h4>
   </div>
   <div class="row">
     <div class="col-xs-2"><b>{{_("Name")}}:</b></div>
-    <div class="col-xs-10" style="border-bottom: 1xp solid black">
+    <div class="col-xs-10" >
       {{_(doc.subscriber)}}
     </div>
   </div>
+  {% if subscriber_doc.entity ==0 %}
+  <div class="row">
+    <div class="col-xs-2"><b>DNI:</b></div>
+    <div class="col-xs-4" >
+      {{_(subscriber_doc.identification)}}
+    </div>
+    <div class="col-xs-2"><b>{{_("Age")}}</b></div>
+    <div class="col-xs-4" >
+      {{_(doc.age)}}
+    </div>
+  </div>
+  {% endif %}
   <div class="row">
     <div class="col-xs-3"><b>{{ _("Block")}}:</b>{{ doc.block}}</div>
     <div class="col-xs-3"><b>{{_("House")}}:</b> {{ doc.house}}</div>
     <div class="col-xs-6"><b>{{_("Month")}}:</b> {{ months[row.month - 1] }}</div>
   </div>
-  {% set fee_doc = frappe.get_doc("Fee", doc.fee) %}
   <table class="table-print">
     <thead>
       <tr>
@@ -29,18 +43,26 @@ doc.company) %}
       {% for service in fee_doc.service_fee %}
       <tr>
         <td>{{ _(service.service_name)}}</td>
+        {% if doc.age>=60 and service.discount_applies%}
+        <td>{{ frappe.utils.ceil(service.fee *0.75) }}</td>
+        {%else %}
         <td>{{ service.fee }}</td>
+        {% endif %}
       </tr>
       {% endfor %}
     </tbody>
     <tfooter>
       <tr>
         <td>{{_("Total")}}</td>
+        {% if doc.age>=60 %}
+        <td>{{ fee_doc.total_discount}}</td>
+        {% else %}
         <td>{{ fee_doc.total}}</td>
+      {% endif %}
       </tr>
     </tfooter>
   </table>
-  <div class="row" style="padding:10px 0"></div>
+  <div class="row" style="padding:8px 0"></div>
   <div class="row">
     <div class="col-xs-4"><b>{{ _("Signature")}}:</b></div>
     <div class="col-xs-8"></div>
@@ -48,7 +70,7 @@ doc.company) %}
 </div>
 {%- endmacro -%} {% for row in doc.monthly_receipts %}
 <div>
-  <div class="row" style="padding:15px 0;border-bottom: 1px solid black;">
+  <div class="row" style="padding:10px 0;border-bottom: 1px solid black;">
     <div class="col-xs-6 border">{{render_table(doc,row)}}</div>
     <div class="col-xs-6">{{render_table(doc,row)}}</div>
   </div>

@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"yX235X5eGu\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Reports &amp; Masters</span>\",\"col\":12}},{\"id\":\"ES3ihQLrSY\",\"type\":\"card\",\"data\":{\"card_name\":\"Transacciones\",\"col\":4}},{\"id\":\"lNI7dygn10\",\"type\":\"card\",\"data\":{\"card_name\":\"Maestros\",\"col\":4}}]",
+ "content": "[{\"id\":\"yX235X5eGu\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Reports &amp; Masters</span>\",\"col\":12}},{\"id\":\"ES3ihQLrSY\",\"type\":\"card\",\"data\":{\"card_name\":\"Transacciones\",\"col\":4}},{\"id\":\"lNI7dygn10\",\"type\":\"card\",\"data\":{\"card_name\":\"Maestros\",\"col\":4}},{\"id\":\"SbQoL6PukL\",\"type\":\"card\",\"data\":{\"card_name\":\"Informes\",\"col\":4}}]",
  "creation": "2025-02-05 10:24:09.056463",
  "custom_blocks": [],
  "docstatus": 0,
@@ -90,9 +90,28 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Informes",
+   "link_count": 1,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Water Bill Paid",
+   "link_count": 0,
+   "link_to": "Water Bill Paid",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2025-02-05 20:54:27.911181",
+ "modified": "2025-02-08 19:59:50.589530",
  "modified_by": "Administrator",
  "module": "Watercontrol",
  "name": "Water Service",

@@ -12,4 +12,13 @@ frappe.ui.form.on("Land", {
         };
     });
   },
+
 });
+
+function checkReadOnly(frm){
+  if (frm.doc.party==1 && frm.doc.subscriber){
+    frm.toggle_enable("full_name",true)
+  }else{
+    frm.toggle_enable("full_name",false)
+  }
+}

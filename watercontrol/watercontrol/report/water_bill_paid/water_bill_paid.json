@@ -1,0 +1,89 @@
+{
+ "add_total_row": 1,
+ "columns": [
+  {
+   "fieldname": "name",
+   "fieldtype": "Data",
+   "label": "ID",
+   "width": 0
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Fecha",
+   "width": 0
+  },
+  {
+   "fieldname": "subscriber",
+   "fieldtype": "Data",
+   "label": "Abonado",
+   "width": 0
+  },
+  {
+   "fieldname": "block",
+   "fieldtype": "Int",
+   "label": "Bloque",
+   "width": 0
+  },
+  {
+   "fieldname": "house",
+   "fieldtype": "Int",
+   "label": "Casa",
+   "width": 0
+  },
+  {
+   "fieldname": "total_to_pay",
+   "fieldtype": "Currency",
+   "label": "Total Pagado",
+   "width": 0
+  }
+ ],
+ "creation": "2025-02-08 19:57:50.549829",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "mandatory": 1,
+   "options": "Company",
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date",
+   "mandatory": 1,
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date",
+   "mandatory": 1,
+   "wildcard_filter": 0
+  }
+ ],
+ "idx": 0,
+ "is_standard": "Yes",
+ "json": "{}",
+ "letterhead": null,
+ "modified": "2025-02-08 20:16:04.409629",
+ "modified_by": "Administrator",
+ "module": "Watercontrol",
+ "name": "Water Bill Paid",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "SELECT\r\n    name,\r\n    date,\r\n    subscriber,\r\n    block,\r\n    house,\r\n    total_to_pay\r\nFROM `tabWater Bill Payment`\r\nWHERE\r\n    date BETWEEN %(start_date)s AND %(end_date)s\r\n    AND company = %(company)s;\r\n",
+ "ref_doctype": "Water Bill Payment",
+ "report_name": "Water Bill Paid",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ],
+ "timeout": 0
+}
