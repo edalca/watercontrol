@@ -70,7 +70,7 @@
  "is_standard": "Yes",
  "json": "{}",
  "letterhead": null,
- "modified": "2025-02-11 13:19:31.097773",
+ "modified": "2025-02-11 21:17:47.159215",
  "modified_by": "Administrator",
  "module": "Watercontrol",
  "name": "Water Bill Paid",
@@ -83,6 +83,9 @@
  "roles": [
   {
    "role": "System Manager"
+  },
+  {
+   "role": "Water Control Administrator"
   }
  ],
  "timeout": 0

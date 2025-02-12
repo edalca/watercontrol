@@ -9,7 +9,7 @@
  "idx": 0,
  "is_standard": "Yes",
  "letterhead": null,
- "modified": "2025-02-11 13:08:24.119967",
+ "modified": "2025-02-11 21:17:31.445143",
  "modified_by": "Administrator",
  "module": "Watercontrol",
  "name": "Water Bill Receivable",
@@ -21,6 +21,9 @@
  "roles": [
   {
    "role": "System Manager"
+  },
+  {
+   "role": "Water Control Administrator"
   }
  ],
  "timeout": 0
