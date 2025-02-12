@@ -95,7 +95,7 @@
    "hidden": 0,
    "is_query_report": 0,
    "label": "Informes",
-   "link_count": 1,
+   "link_count": 2,
    "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
@@ -103,15 +103,25 @@
   {
    "hidden": 0,
    "is_query_report": 1,
-   "label": "Water Bill Paid",
+   "label": "Pagos de Recibo de Agua",
    "link_count": 0,
    "link_to": "Water Bill Paid",
    "link_type": "Report",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Water Bill Receivable",
+   "link_count": 0,
+   "link_to": "Water Bill Receivable",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2025-02-08 19:59:50.589530",
+ "modified": "2025-02-11 21:03:17.595339",
  "modified_by": "Administrator",
  "module": "Watercontrol",
  "name": "Water Service",
