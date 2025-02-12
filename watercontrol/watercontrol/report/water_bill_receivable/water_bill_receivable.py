@@ -126,8 +126,8 @@ class WaterBillreceivableReport:
 				elif bps['payment_date'] is not None:
 					paid_amount += bps['total']
 
-			entry['Paid Amount'] = paid_amount
-			entry['Outstanding Amount'] = outstanding_amount
+			entry['paid'] = paid_amount
+			entry['outstanding'] = outstanding_amount
 			for range_label, total in range_totals.items():
 				entry[range_label] = total
 
