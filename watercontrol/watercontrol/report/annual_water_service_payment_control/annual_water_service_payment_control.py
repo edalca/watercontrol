@@ -68,15 +68,21 @@ def get_data(filters):
     fee_names = [fee["name"] for fee in fee_names]  # Convertir a lista de nombres
 
     water_bills = frappe.get_all(
-        "Water Bill",
-        filters={
-            "company": company,
-            "docstatus": 1,
-            "land": ["in", lands_name],
-            "fee": ["in", fee_names]  # Filtrar por Fee
-        },
-        fields=["name", "subscriber", "age", "fee", "block", "house"],
-        order_by="block asc, house asc"  # Ordenar por block y luego por house
+    "Water Bill",
+    filters={
+        "company": company,
+        "docstatus": 1,
+        "land": ["in", lands_name],
+        "fee": ["in", fee_names]  # Filtrar por Fee
+    },
+    fields=["name", "subscriber", "age", "fee", "block", "house"]
+    )
+
+    # Convertir block y house a enteros para ordenación
+    water_bills = sorted(
+        water_bills, 
+        key=lambda x: (int(x["block"]) if x["block"].isdigit() else float('inf'), 
+                    int(x["house"]) if x["house"].isdigit() else float('inf'))
     )
 
     # Paso 3: Construir los datos del reporte

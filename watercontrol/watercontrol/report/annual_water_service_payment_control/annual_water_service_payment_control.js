@@ -28,12 +28,12 @@ frappe.query_reports["Annual Water Service Payment Control"] = {
 		{
             fieldname: "block",
             label: __("Block"),
-            fieldtype: "Data",
+            fieldtype: "Int",
         },
 		{
             fieldname: "house",
             label: __("House"),
-            fieldtype: "Data",
+            fieldtype: "Int",
         }
 	]
 };
