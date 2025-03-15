@@ -22,7 +22,6 @@ frappe.ui.form.on("Water Bill", {
   },
   after_save: function (frm) {
     frm.trigger("birthdate");
-    console.log(frm.doc);
     const expected_name = `${frm.doc.fee}-${frm.doc.land}`;
     // Verificar si el name actual coincide con la combinación de fee y land
     if (frm.doc.name !== expected_name) {
@@ -48,7 +47,5 @@ function calculate_age(frm) {
       age--;
     }
     frm.set_value("age", age);
-  } else {
-    frm.set_value("age", "");
   }
 }

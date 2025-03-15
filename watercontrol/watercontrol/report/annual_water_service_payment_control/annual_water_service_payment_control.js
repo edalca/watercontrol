@@ -17,6 +17,23 @@ frappe.query_reports["Annual Water Service Payment Control"] = {
             fieldtype: "Int",
             reqd: 1, // Opcional: si el año debe ser obligatorio
             default: new Date().getFullYear() // Opción para establecer el año actual como predeterminado
+        },
+		{
+            fieldname: "subscriber",
+            label: __("Subscriber"),
+            fieldtype: "Link",
+			options:"Subscriber",
+            reqd: 0, 
+        },
+		{
+            fieldname: "block",
+            label: __("Block"),
+            fieldtype: "Data",
+        },
+		{
+            fieldname: "house",
+            label: __("House"),
+            fieldtype: "Data",
         }
 	]
 };

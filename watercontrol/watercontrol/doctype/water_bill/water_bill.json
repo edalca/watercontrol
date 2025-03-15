@@ -68,16 +68,14 @@
    "fieldname": "age",
    "fieldtype": "Int",
    "label": "Age",
-   "read_only": 1,
-   "reqd": 1
+   "read_only": 1
   },
   {
    "fetch_from": "land.birthdate",
    "fieldname": "birthdate",
    "fieldtype": "Date",
    "label": "Birthdate",
-   "read_only": 1,
-   "reqd": 1
+   "read_only": 1
   },
   {
    "fieldname": "column_break_ioxw",
@@ -147,7 +145,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-03-15 02:16:40.720364",
+ "modified": "2025-03-15 13:56:51.466458",
  "modified_by": "Administrator",
  "module": "Watercontrol",
  "name": "Water Bill",

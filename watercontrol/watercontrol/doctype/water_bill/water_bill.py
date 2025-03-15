@@ -4,12 +4,7 @@ from datetime import datetime, date  # Importar date
 from calendar import monthrange
 
 class WaterBill(Document):
-    def validate(self):
-        # Validar que la edad no sea 0 o esté vacía
-        if not self.age or self.age == 0:
-            frappe.throw("El campo 'Edad' no puede ser 0 o estar vacío. Por favor, ingrese un valor válido.")
-        
-
+     
     def before_save(self):
         # Generar el nuevo nombre basado en fee y land
         new_name = f"{self.fee}-{self.land}"

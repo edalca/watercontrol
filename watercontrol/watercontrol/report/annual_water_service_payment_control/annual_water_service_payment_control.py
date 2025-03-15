@@ -34,9 +34,32 @@ def get_data(filters):
         frappe.throw(_("Please select a Company"))
 
     company = filters.get("company")
-    fiscal_year = "2025"  # Año fiscal específico para el filtro
+    fiscal_year = filters.get("year")  # Año fiscal específico para el filtro
+    subscriber = filters.get("subscriber")
+    block = filters.get("block")
+    house = filters.get("house")
 
-    # Paso 1: Obtener los Fee relacionados con el año fiscal
+    # Paso 1: Crear los filtros dinámicamente para lands_name
+    land_filters = {}
+    if subscriber:
+        land_filters["subscriber"] = subscriber
+    if block:
+        land_filters["block"] = block
+    if house:
+        land_filters["house"] = house
+
+    lands_name = frappe.get_all(
+        "Land",
+        filters=land_filters,  # Aplicar solo los filtros que existan
+        fields=["name"]
+    )
+    lands_name = [land["name"] for land in lands_name]
+
+    # Verificar si no hay lands_name y retornar una lista vacía
+    if not lands_name:
+        return []
+
+    # Paso 2: Obtener los Water Bills relacionados con los Fee anteriores y ordenarlos
     fee_names = frappe.get_all(
         "Fee",
         filters={"bill_year": fiscal_year},
@@ -44,15 +67,16 @@ def get_data(filters):
     )
     fee_names = [fee["name"] for fee in fee_names]  # Convertir a lista de nombres
 
-    # Paso 2: Obtener los Water Bills relacionados con los Fee anteriores
     water_bills = frappe.get_all(
         "Water Bill",
         filters={
             "company": company,
             "docstatus": 1,
+            "land": ["in", lands_name],
             "fee": ["in", fee_names]  # Filtrar por Fee
         },
-        fields=["name", "subscriber", "age", "fee", "block", "house"]
+        fields=["name", "subscriber", "age", "fee", "block", "house"],
+        order_by="block asc, house asc"  # Ordenar por block y luego por house
     )
 
     # Paso 3: Construir los datos del reporte
@@ -79,21 +103,21 @@ def get_data(filters):
         data.append({
             "subscriber": bill.subscriber or "Sin Abonado",  # Nombre del abonado
             "rate_type": fee_name,                          # Tipo de tarifa
-            "age": bill.age or "",                       # Edad del abonado
-            "block": bill.block or "",                   # Bloque
-            "house": bill.house or "",                   # Casa
-            "jan": months_status.get(1, ""),               # Pagos para enero
-            "feb": months_status.get(2, ""),               # Pagos para febrero
-            "mar": months_status.get(3, ""),               # Pagos para marzo
-            "apr": months_status.get(4, ""),               # Pagos para abril
-            "may": months_status.get(5, ""),               # Pagos para mayo
-            "jun": months_status.get(6, ""),               # Pagos para junio
-            "jul": months_status.get(7, ""),               # Pagos para julio
-            "aug": months_status.get(8, ""),               # Pagos para agosto
-            "sep": months_status.get(9, ""),               # Pagos para septiembre
-            "oct": months_status.get(10, ""),              # Pagos para octubre
-            "nov": months_status.get(11, ""),              # Pagos para noviembre
-            "dec": months_status.get(12, ""),              # Pagos para diciembre
+            "age": bill.age or "",                          # Edad del abonado
+            "block": bill.block or "",                      # Bloque
+            "house": bill.house or "",                      # Casa
+            "jan": months_status.get(1, ""),                # Pagos para enero
+            "feb": months_status.get(2, ""),                # Pagos para febrero
+            "mar": months_status.get(3, ""),                # Pagos para marzo
+            "apr": months_status.get(4, ""),                # Pagos para abril
+            "may": months_status.get(5, ""),                # Pagos para mayo
+            "jun": months_status.get(6, ""),                # Pagos para junio
+            "jul": months_status.get(7, ""),                # Pagos para julio
+            "aug": months_status.get(8, ""),                # Pagos para agosto
+            "sep": months_status.get(9, ""),                # Pagos para septiembre
+            "oct": months_status.get(10, ""),               # Pagos para octubre
+            "nov": months_status.get(11, ""),               # Pagos para noviembre
+            "dec": months_status.get(12, ""),               # Pagos para diciembre
         })
 
     return data
