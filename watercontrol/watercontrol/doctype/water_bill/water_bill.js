@@ -2,23 +2,33 @@
 // For license information, please see license.txt
 
 frappe.ui.form.on("Water Bill", {
-  refresh(frm){
-    frm.set_query('fee', function() {
+  refresh(frm) {
+    frm.set_query("fee", function () {
       return {
-          filters: {
-              'docstatus': 1,
-              'company':frm.doc.company
-          }
+        filters: {
+          docstatus: 1,
+          company: frm.doc.company,
+        },
       };
     });
-    frm.set_query('land', function() {
+    frm.set_query("land", function () {
       return {
-          filters: {
-              'docstatus': 1,
-              'company':frm.doc.company
-          }
+        filters: {
+          docstatus: 1,
+          company: frm.doc.company,
+        },
       };
     });
+  },
+  after_save: function (frm) {
+    frm.trigger("birthdate");
+    console.log(frm.doc);
+    const expected_name = `${frm.doc.fee}-${frm.doc.land}`;
+    // Verificar si el name actual coincide con la combinación de fee y land
+    if (frm.doc.name !== expected_name) {
+      // Redirigir al nuevo URL
+      frappe.set_route("Form", "Water Bill", expected_name);
+    }
   },
   birthdate(frm) {
     calculate_age(frm);
@@ -38,7 +48,7 @@ function calculate_age(frm) {
       age--;
     }
     frm.set_value("age", age);
-  }else{
-    frm.set_value("age","");
+  } else {
+    frm.set_value("age", "");
   }
 }

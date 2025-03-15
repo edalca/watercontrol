@@ -95,7 +95,7 @@
    "hidden": 0,
    "is_query_report": 0,
    "label": "Informes",
-   "link_count": 2,
+   "link_count": 3,
    "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
@@ -113,15 +113,25 @@
   {
    "hidden": 0,
    "is_query_report": 1,
-   "label": "Water Bill Receivable",
+   "label": "Cobros Pendientes de Recibo de Agua",
    "link_count": 0,
    "link_to": "Water Bill Receivable",
    "link_type": "Report",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "Control de Pago Anual del Servicio de Agua",
+   "link_count": 0,
+   "link_to": "Annual Water Service Payment Control",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2025-02-11 21:03:17.595339",
+ "modified": "2025-03-15 03:46:48.243101",
  "modified_by": "Administrator",
  "module": "Watercontrol",
  "name": "Water Service",

@@ -8,13 +8,13 @@
   "bill_information_column",
   "company",
   "fee",
-  "land",
+  "amended_from",
   "column_break_ioxw",
   "subscriber_information",
+  "land",
   "subscriber",
   "birthdate",
   "age",
-  "amended_from",
   "section_break_tpqm",
   "block",
   "column_break_gbhu",
@@ -28,7 +28,7 @@
   {
    "fieldname": "land",
    "fieldtype": "Link",
-   "label": "Land",
+   "label": "Land (Subscriber)",
    "options": "Land",
    "reqd": 1
   },
@@ -36,6 +36,7 @@
    "fetch_from": "land.full_name",
    "fieldname": "subscriber",
    "fieldtype": "Data",
+   "hidden": 1,
    "in_list_view": 1,
    "label": "Subscriber",
    "read_only": 1
@@ -67,14 +68,16 @@
    "fieldname": "age",
    "fieldtype": "Int",
    "label": "Age",
-   "read_only": 1
+   "read_only": 1,
+   "reqd": 1
   },
   {
    "fetch_from": "land.birthdate",
    "fieldname": "birthdate",
    "fieldtype": "Date",
    "label": "Birthdate",
-   "read_only": 1
+   "read_only": 1,
+   "reqd": 1
   },
   {
    "fieldname": "column_break_ioxw",
@@ -91,7 +94,6 @@
    "search_index": 1
   },
   {
-   "depends_on": "eval:doc.subscriber;",
    "fieldname": "subscriber_information",
    "fieldtype": "Heading",
    "label": "Subscriber Information"
@@ -145,7 +147,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-02-11 11:36:40.086187",
+ "modified": "2025-03-15 02:16:40.720364",
  "modified_by": "Administrator",
  "module": "Watercontrol",
  "name": "Water Bill",

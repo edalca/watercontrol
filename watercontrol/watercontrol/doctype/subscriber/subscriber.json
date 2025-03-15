@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "autoname": "field:identification",
  "creation": "2025-02-04 21:31:52.605274",
  "doctype": "DocType",
@@ -15,7 +16,8 @@
   "company",
   "birthdate",
   "phone",
-  "amended_from"
+  "amended_from",
+  "disabled"
  ],
  "fields": [
   {
@@ -84,12 +86,19 @@
    "fieldname": "entity",
    "fieldtype": "Check",
    "label": "Entity"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "disabled",
+   "fieldtype": "Check",
+   "label": "Disable"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-02-11 11:14:34.096422",
+ "modified": "2025-03-15 03:11:07.102180",
  "modified_by": "Administrator",
  "module": "Watercontrol",
  "name": "Subscriber",
@@ -112,6 +121,7 @@
    "write": 1
   }
  ],
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],

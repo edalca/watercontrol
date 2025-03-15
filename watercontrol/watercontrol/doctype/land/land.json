@@ -1,6 +1,6 @@
 {
  "actions": [],
- "allow_rename": 1,
+ "allow_import": 1,
  "autoname": "format:{subscriber}-{block}-{house}",
  "creation": "2025-02-04 22:03:21.068353",
  "doctype": "DocType",
@@ -89,7 +89,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-02-11 11:34:57.779172",
+ "modified": "2025-03-15 00:00:43.200809",
  "modified_by": "Administrator",
  "module": "Watercontrol",
  "name": "Land",
@@ -113,6 +113,7 @@
   }
  ],
  "search_fields": "block,house",
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
